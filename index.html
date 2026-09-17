@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tres Reyes | Sistema de Logística y Rutas de Reparto</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            gold: {
+              300: '#F3E5AB',
+              400: '#E5C158',
+              500: '#C59B27',
+              600: '#A37E1C',
+            },
+            dark: {
+              950: '#080B11',
+              900: '#0F141C',
+              800: '#171F2C',
+              700: '#232E40',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 3.5s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF099 0%, #C59B27 50%, #9A7410 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-glow {
+      box-shadow: 0 0 30px -5px rgba(197, 155, 39, 0.25);
+    }
+    .green-glow {
+      box-shadow: 0 0 25px -5px rgba(22, 163, 74, 0.35);
+    }
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-black">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="fixed top-0 w-full bg-dark-950/90 backdrop-blur-md border-b border-dark-800 z-50 px-6 py-3 transition-all">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      
+      <!-- Logo Tres Reyes -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Tres Reyes Logo" class="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition">
+      </a>
+
+      <!-- Menu Links -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#solucion" class="hover:text-gold-400 transition">La Solución</a>
+        <a href="#funcionalidades" class="hover:text-gold-400 transition">Funcionalidades</a>
+        <a href="#caso-exito" class="hover:text-gold-400 transition">Caso de Éxito</a>
+        <a href="#equipo" class="hover:text-gold-400 transition">Equipo de Trabajo</a>
+      </div>
+
+      <!-- CTA Botón al Sistema -->
+      <div class="flex items-center gap-3">
+        <a href="https://tres-reyes-logistica.page.gd" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-dark-900 border border-gold-500/50 hover:border-gold-500 text-gold-400 px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase transition gold-glow">
+          <span>Ir al Sitio</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <a href="#contacto" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2 rounded-xl font-bold text-xs tracking-wider uppercase shadow-lg shadow-emerald-950 transition green-glow">
+          Solicitar Demo
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="solucion" class="pt-36 pb-20 px-6 max-w-7xl mx-auto relative overflow-hidden">
+    <!-- Ambient Glow BG -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gold-500/10 rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-emerald-500/10 rounded-full blur-[110px] pointer-events-none"></div>
+
+    <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Text Side -->
+      <div class="lg:col-span-7 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 bg-dark-900 border border-gold-500/40 px-4 py-1.5 rounded-full text-xs font-semibold text-gold-400 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+          <span>SISTEMA DE LOGÍSTICA & RUTAS DE REPARTO</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] tracking-tight">
+          Gestión inteligente de rutas: De facturas en PDF a <span class="gold-gradient-text">repartos optimizados</span>.
+        </h1>
+
+        <p class="text-slate-400 text-base sm:text-lg mt-6 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          Desarrollado para la empresa <strong class="text-gold-400">Tres Reyes</strong>. Procesa boletas de clientes, calcula la carga en kilogramos, agrupa geolocalizaciones por zonas y despacha las hojas de ruta directamente a <strong class="text-emerald-400">Google Maps</strong>.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <a href="https://tres-reyes-logistica.page.gd" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-xl font-bold text-xs tracking-wider uppercase transition shadow-xl green-glow flex items-center justify-center gap-2 group">
+            <span>Ingresar al Sistema Live</span>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          
+          <a href="#funcionalidades" class="w-full sm:w-auto bg-dark-900 hover:bg-dark-800 border border-dark-700 text-slate-200 px-6 py-4 rounded-xl font-bold text-xs tracking-wider uppercase transition text-center">
+            Ver Módulos del Sistema
+          </a>
+        </div>
+
+        <!-- Metric Badges -->
+        <div class="mt-12 grid grid-cols-3 gap-4 border-t border-dark-800 pt-8 max-w-lg mx-auto lg:mx-0">
+          <div>
+            <div class="text-2xl lg:text-3xl font-extrabold text-gold-400">100%</div>
+            <div class="text-xs text-slate-400 mt-1">Lectura OCR PDF</div>
+          </div>
+          <div>
+            <div class="text-2xl lg:text-3xl font-extrabold text-emerald-400">Zonas 1-5</div>
+            <div class="text-xs text-slate-400 mt-1">Geolocalización</div>
+          </div>
+          <div>
+            <div class="text-2xl lg:text-3xl font-extrabold text-white">Google Maps</div>
+            <div class="text-xs text-slate-400 mt-1">Navegación chofer</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Device / Screenshot Carousel (7 capturas exactas) -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative bg-dark-900 border border-gold-500/40 p-2.5 rounded-2xl gold-glow">
+          
+          <!-- Browser Header con Título Dinámico -->
+          <div class="flex items-center justify-between px-3 py-2 bg-dark-950 rounded-t-xl border-b border-dark-800 mb-2">
+            <div class="flex items-center gap-1.5">
+              <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+            </div>
+            <span id="carousel-title" class="text-[11px] text-gold-400 font-mono font-semibold">1/7 — Acceso al Sistema</span>
+          </div>
+
+          <!-- Slides Container -->
+          <div class="relative rounded-xl overflow-hidden aspect-[16/10] bg-dark-950 group">
+            
+            <!-- Slide 1: Login -->
+            <div class="carousel-slide block w-full h-full">
+              <img src="login.png" alt="Acceso al Sistema" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Slide 2: Carga de Boletas -->
+            <div class="carousel-slide hidden w-full h-full">
+              <img src="cargaboletas.png" alt="Carga de Boletas PDF" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Slide 3: Viajes Pendientes -->
+            <div class="carousel-slide hidden w-full h-full">
+              <img src="viajespend.png" alt="Viajes Pendientes por Zona" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Slide 4: Viajes del Día -->
+            <div class="carousel-slide hidden w-full h-full">
+              <img src="viajeshoy.png" alt="Control de Viajes del Día" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Slide 5: Tracking GPS -->
+            <div class="carousel-slide hidden w-full h-full">
+              <img src="track.jpg" alt="Tracking GPS en Tiempo Real" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Slide 6: Alertas -->
+            <div class="carousel-slide hidden w-full h-full">
+              <img src="alerta.png" alt="Alertas de Desvío de Ruta" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Slide 7: Configuración -->
+            <div class="carousel-slide hidden w-full h-full">
+              <img src="config.png" alt="Configuración de Flota y Repartidores" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Botones Laterales (< >) -->
+            <button onclick="prevSlide()" aria-label="Anterior" class="absolute left-2 top-1/2 -translate-y-1/2 bg-dark-950/80 hover:bg-gold-500 hover:text-dark-950 text-white w-8 h-8 rounded-full border border-dark-700 flex items-center justify-center font-bold transition shadow-lg z-10">
+              ‹
+            </button>
+            <button onclick="nextSlide()" aria-label="Siguiente" class="absolute right-2 top-1/2 -translate-y-1/2 bg-dark-950/80 hover:bg-gold-500 hover:text-dark-950 text-white w-8 h-8 rounded-full border border-dark-700 flex items-center justify-center font-bold transition shadow-lg z-10">
+              ›
+            </button>
+
+          </div>
+
+          <!-- Indicadores (Dots) -->
+          <div class="flex justify-center items-center gap-1.5 mt-3">
+            <button onclick="setSlide(0)" class="dot w-2.5 h-2.5 rounded-full bg-gold-500 transition-all"></button>
+            <button onclick="setSlide(1)" class="dot w-2.5 h-2.5 rounded-full bg-dark-700 transition-all"></button>
+            <button onclick="setSlide(2)" class="dot w-2.5 h-2.5 rounded-full bg-dark-700 transition-all"></button>
+            <button onclick="setSlide(3)" class="dot w-2.5 h-2.5 rounded-full bg-dark-700 transition-all"></button>
+            <button onclick="setSlide(4)" class="dot w-2.5 h-2.5 rounded-full bg-dark-700 transition-all"></button>
+            <button onclick="setSlide(5)" class="dot w-2.5 h-2.5 rounded-full bg-dark-700 transition-all"></button>
+            <button onclick="setSlide(6)" class="dot w-2.5 h-2.5 rounded-full bg-dark-700 transition-all"></button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== BANNER SISTEMA EN VIVO ==================== -->
+  <section class="bg-gradient-to-r from-dark-900 via-dark-800 to-dark-900 border-y border-gold-500/30 py-8 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-emerald-950 border border-emerald-500/40 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-2xl">
+          🚀
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white">Plataforma Lista y Operativa</h3>
+          <p class="text-xs text-slate-400">Podés probar el sistema en tiempo real accediendo a nuestro entorno desplegado.</p>
+        </div>
+      </div>
+      <a href="https://tres-reyes-logistica.page.gd" target="_blank" class="bg-gold-500 hover:bg-gold-400 text-dark-950 px-6 py-3 rounded-xl font-extrabold text-xs tracking-wider uppercase transition shadow-lg flex items-center gap-2">
+        <span>Ir a tres-reyes-logistica.page.gd</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== FUNCIONALIDADES CLAVE ==================== -->
+  <section id="funcionalidades" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-gold-500 font-semibold text-xs tracking-widest uppercase">Módulos del Sistema</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Funcionalidades Principales</h2>
+      <p class="text-slate-400 text-sm mt-3">Automatizamos la logística de distribución punta a punta con tecnología de vanguardia.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Feature 1 -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-gold-500/50 p-6 rounded-2xl card-hover group">
+        <div class="w-12 h-12 bg-dark-950 border border-gold-500/30 rounded-xl flex items-center justify-center text-gold-400 text-xl font-bold mb-5 group-hover:scale-110 transition">
+          📄
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Lectura de Boletas PDF</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Arrastrá las facturas o boletas del día. El sistema extrae cliente, dirección, CP, peso en kg y asigna automáticamente la zona correspondiente.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-emerald-500/50 p-6 rounded-2xl card-hover group">
+        <div class="w-12 h-12 bg-dark-950 border border-emerald-500/30 rounded-xl flex items-center justify-center text-emerald-400 text-xl font-bold mb-5 group-hover:scale-110 transition">
+          🗺️
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Agrupación por Zonas (1 a 5)</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Agrupa los viajes pendientes por zonas. Permite seleccionar y combinar zonas cercanas para enviarlas el mismo día en un solo vehículo.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-gold-500/50 p-6 rounded-2xl card-hover group">
+        <div class="w-12 h-12 bg-dark-950 border border-gold-500/30 rounded-xl flex items-center justify-center text-gold-400 text-xl font-bold mb-5 group-hover:scale-110 transition">
+          🚚
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Asignación de Flota y Chofer</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Elegí la fecha de despacho, seleccioná el camión según la capacidad de carga (kg) y asigná al repartidor de manera totalmente interactiva.</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-emerald-500/50 p-6 rounded-2xl card-hover group">
+        <div class="w-12 h-12 bg-dark-950 border border-emerald-500/30 rounded-xl flex items-center justify-center text-emerald-400 text-xl font-bold mb-5 group-hover:scale-110 transition">
+          📲
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Integración con Google Maps</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Al iniciar el viaje, la hoja de ruta se envía al perfil del chofer con un botón directo de <strong>"Abrir en Google Maps"</strong> para navegar sin errores.</p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-gold-500/50 p-6 rounded-2xl card-hover group">
+        <div class="w-12 h-12 bg-dark-950 border border-gold-500/30 rounded-xl flex items-center justify-center text-gold-400 text-xl font-bold mb-5 group-hover:scale-110 transition">
+          📡
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Tracking en Tiempo Real</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Monitoreá la ubicación GPS exacta de los camiones en ruta sobre el mapa en vivo y seguí el estado de cada entrega (completada o en curso).</p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-emerald-500/50 p-6 rounded-2xl card-hover group">
+        <div class="w-12 h-12 bg-dark-950 border border-emerald-500/30 rounded-xl flex items-center justify-center text-emerald-400 text-xl font-bold mb-5 group-hover:scale-110 transition">
+          🚨
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Alertas de Desvío de Ruta</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">El sistema notifica inmediatamente en la pestaña de Alertas si un vehículo se desvía más de la distancia permitida de la ruta trazada.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CASO DE ÉXITO TRES REYES ==================== -->
+  <section id="caso-exito" class="py-20 bg-dark-900 border-y border-dark-800 px-6">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      
+      <div>
+        <!-- Logo Tres Reyes -->
+        <div class="mb-6">
+          <img src="logo.png" alt="Tres Reyes Aceitunas y Encurtidos" class="h-16 w-auto object-contain">
+        </div>
+
+        <h2 class="text-3xl font-extrabold text-white">Caso de Éxito: Tres Reyes — Aceitunas y Encurtidos</h2>
+        <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+          La empresa <strong class="text-white">Tres Reyes</strong> requería una solución tecnológica para resolver la complejidad en la logística de sus camiones de reparto. Desarrollamos un software personalizado a medida que simplifica el armado de viajes, calcula kilogramos y guía al chofer en tiempo real.
+        </p>
+
+        <div class="mt-6 space-y-3 text-xs text-slate-300">
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span> <strong class="text-white">Carga Automatizada:</strong> Procesamiento instantáneo de boletas PDF.
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span> <strong class="text-white">Rutas Óptimas:</strong> Zonas 1 a 5 con combinaciones por capacidad vehicular.
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span> <strong class="text-white">Navegación Ágil:</strong> Apertura de itinerario directo en Google Maps.
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <a href="https://tres-reyes-logistica.page.gd" target="_blank" class="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-dark-950 px-6 py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider transition shadow-lg">
+            <span>Visitar Sistema de Tres Reyes</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats Box -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-dark-950 border border-dark-800 p-6 rounded-2xl text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold text-gold-400 mb-1">-85%</div>
+          <div class="text-xs text-slate-400">Tiempo de armado de hojas de ruta</div>
+        </div>
+        <div class="bg-dark-950 border border-dark-800 p-6 rounded-2xl text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">100%</div>
+          <div class="text-xs text-slate-400">Control de kilogramos por vehículo</div>
+        </div>
+        <div class="bg-dark-950 border border-dark-800 p-6 rounded-2xl text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">5 Zonas</div>
+          <div class="text-xs text-slate-400">Clasificación geográfica precisa</div>
+        </div>
+        <div class="bg-dark-950 border border-dark-800 p-6 rounded-2xl text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold text-gold-400 mb-1">0</div>
+          <div class="text-xs text-slate-400">Errores en direcciones de clientes</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== EQUIPO DE TRABAJO (SEGÚN CARTA GANTT) ==================== -->
+  <section id="equipo" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-gold-500 font-semibold text-xs tracking-widest uppercase">Talento & Estructura</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Equipo de Desarrollo del Proyecto</h2>
+      <p class="text-slate-400 text-sm mt-3">Organización y roles asignados para el diseño, desarrollo y gestión de la plataforma.</p>
+    </div>
+
+    <!-- Grid de Integrantes en Orden Oficial -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      <!-- 1. Varela (PM & DUX) -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-gold-500/60 rounded-2xl overflow-hidden transition duration-300 card-hover group">
+        <div class="aspect-square bg-dark-950 overflow-hidden relative">
+          <img src="varela.jfif" alt="Joaquín Varela" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-bold text-white">Joaquín Varela</h3>
+          <p class="text-xs text-gold-400 font-semibold mt-0.5">Project Manager & Diseñador UX/UI</p>
+          <span class="inline-block mt-3 px-2.5 py-1 bg-dark-950 border border-dark-700 rounded-md text-[10px] text-slate-400">PM / DUX — Gestión General & Interfaz</span>
+        </div>
+      </div>
+
+      <!-- 2. Silva (BD) -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-emerald-500/60 rounded-2xl overflow-hidden transition duration-300 card-hover group">
+        <div class="aspect-square bg-dark-950 overflow-hidden relative">
+          <img src="mateo.jfif" alt="Silva" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-bold text-white">Silva</h3>
+          <p class="text-xs text-emerald-400 font-semibold mt-0.5">Administrador de Base de Datos</p>
+          <span class="inline-block mt-3 px-2.5 py-1 bg-dark-950 border border-dark-700 rounded-md text-[10px] text-slate-400">BD — Estructura & Gestión de Datos</span>
+        </div>
+      </div>
+
+      <!-- 3. Traverso (D01) -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-gold-500/60 rounded-2xl overflow-hidden transition duration-300 card-hover group">
+        <div class="aspect-square bg-dark-950 overflow-hidden relative">
+          <img src="traverso.jfif" alt="Traverso" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-bold text-white">Traverso</h3>
+          <p class="text-xs text-gold-400 font-semibold mt-0.5">Desarrollador 01 (Front / Back)</p>
+          <span class="inline-block mt-3 px-2.5 py-1 bg-dark-950 border border-dark-700 rounded-md text-[10px] text-slate-400">D01 — Lógica de Sistema & Servidor</span>
+        </div>
+      </div>
+
+      <!-- 4. Crupi (D02) -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-emerald-500/60 rounded-2xl overflow-hidden transition duration-300 card-hover group">
+        <div class="aspect-square bg-dark-950 overflow-hidden relative">
+          <img src="crupi.jfif" alt="Crupi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-bold text-white">Crupi</h3>
+          <p class="text-xs text-emerald-400 font-semibold mt-0.5">Desarrollador 02 (Front / Back)</p>
+          <span class="inline-block mt-3 px-2.5 py-1 bg-dark-950 border border-dark-700 rounded-md text-[10px] text-slate-400">D02 — Módulos & Integraciones</span>
+        </div>
+      </div>
+
+      <!-- 5. García (D03) -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-gold-500/60 rounded-2xl overflow-hidden transition duration-300 card-hover group">
+        <div class="aspect-square bg-dark-950 overflow-hidden relative">
+          <img src="garcia.jfif" alt="García" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-bold text-white">García</h3>
+          <p class="text-xs text-gold-400 font-semibold mt-0.5">Desarrollador 03 (Front End)</p>
+          <span class="inline-block mt-3 px-2.5 py-1 bg-dark-950 border border-dark-700 rounded-md text-[10px] text-slate-400">D03 — Maquetación & Componentes</span>
+        </div>
+      </div>
+
+      <!-- 6. Gurschpon (ADO01) -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-emerald-500/60 rounded-2xl overflow-hidden transition duration-300 card-hover group">
+        <div class="aspect-square bg-dark-950 overflow-hidden relative">
+          <img src="gurschpon.jfif" alt="Gurschpon" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-bold text-white">Gurschpon</h3>
+          <p class="text-xs text-emerald-400 font-semibold mt-0.5">Encargado Administrativo 01</p>
+          <span class="inline-block mt-3 px-2.5 py-1 bg-dark-950 border border-dark-700 rounded-md text-[10px] text-slate-400">ADO01 — Documentación & Control</span>
+        </div>
+      </div>
+
+      <!-- 7. Rodríguez (ADO02) -->
+      <div class="bg-dark-900 border border-dark-800 hover:border-gold-500/60 rounded-2xl overflow-hidden transition duration-300 card-hover group">
+        <div class="aspect-square bg-dark-950 overflow-hidden relative">
+          <img src="rodriguez.jfif" alt="Rodríguez" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-bold text-white">Rodríguez</h3>
+          <p class="text-xs text-gold-400 font-semibold mt-0.5">Encargado Administrativo 02</p>
+          <span class="inline-block mt-3 px-2.5 py-1 bg-dark-950 border border-dark-700 rounded-md text-[10px] text-slate-400">ADO02 — Gestión & Operativa</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FORMULARIO DE CONTACTO ==================== -->
+  <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto relative">
+    <div class="bg-dark-900 border border-gold-500/30 p-8 sm:p-12 rounded-3xl gold-glow relative z-10">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <h2 class="text-3xl font-extrabold text-white">¿Querés optimizar la logística de tu empresa?</h2>
+        <p class="text-slate-400 text-xs mt-2">Ponete en contacto con nosotros para conocer más detalles sobre el sistema o solicitar una demostración personalizada.</p>
+      </div>
+
+      <form class="space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">Nombre y Apellido</label>
+            <input type="text" required class="w-full bg-dark-950 border border-dark-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-gold-500 transition" placeholder="Ej: Roberto García">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">Empresa / Distribuidora</label>
+            <input type="text" required class="w-full bg-dark-950 border border-dark-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-gold-500 transition" placeholder="Ej: Tres Reyes S.A.">
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">Correo Electrónico</label>
+            <input type="email" required class="w-full bg-dark-950 border border-dark-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-gold-500 transition" placeholder="tu@empresa.com">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2">Cantidad de Vehículos de Reparto</label>
+            <select class="w-full bg-dark-950 border border-dark-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-gold-500 transition">
+              <option>1 a 5 camiones</option>
+              <option>5 a 15 camiones</option>
+              <option>Más de 15 camiones</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-2">Mensaje o Consulta</label>
+          <textarea rows="4" class="w-full bg-dark-950 border border-dark-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-gold-500 transition" placeholder="Escribinos tus necesidades de logística o distribución..."></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-emerald-950 uppercase tracking-wider text-xs transition green-glow">
+          Enviar Consulta de Demostración ➔
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-dark-950 border-t border-dark-800 py-10 px-6 text-center sm:text-left">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+      
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Tres Reyes" class="h-8 w-auto object-contain">
+        <div>
+          <span class="text-xs font-bold text-white uppercase tracking-wider block">Tres Reyes — Sistema Logístico</span>
+          <span class="text-[11px] text-slate-500">© 2026 Desarrollado para Tres Reyes S.A.</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-slate-400">
+        <a href="https://tres-reyes-logistica.page.gd" target="_blank" class="hover:text-gold-400 transition">Ir al Sistema Live</a>
+        <a href="#funcionalidades" class="hover:text-gold-400 transition">Funcionalidades</a>
+        <a href="#equipo" class="hover:text-gold-400 transition">Equipo de Trabajo</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script Control de Carrusel (7 Slides) -->
+  <script>
+    const titles = [
+      "1/7 — Acceso al Sistema",
+      "2/7 — Carga de Boletas PDF",
+      "3/7 — Viajes Pendientes por Zona",
+      "4/7 — Control de Viajes del Día",
+      "5/7 — Tracking GPS en Tiempo Real",
+      "6/7 — Alertas de Desvío de Ruta",
+      "7/7 — Configuración de Flota y Repartidores"
+    ];
+    let currentSlide = 0;
+
+    function updateCarousel() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.dot');
+      const titleEl = document.getElementById('carousel-title');
+
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.remove('hidden');
+          slide.classList.add('block');
+        } else {
+          slide.classList.remove('block');
+          slide.classList.add('hidden');
+        }
+      });
+
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.classList.remove('bg-dark-700');
+          dot.classList.add('bg-gold-500', 'w-4');
+        } else {
+          dot.classList.remove('bg-gold-500', 'w-4');
+          dot.classList.add('bg-dark-700');
+        }
+      });
+
+      if (titleEl) titleEl.innerText = titles[currentSlide];
+    }
+
+    function nextSlide() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    function setSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+  </script>
+
+</body>
+</html>
