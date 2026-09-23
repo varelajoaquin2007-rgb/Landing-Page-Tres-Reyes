@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b0a">
+  <title>TruckRoute | Logística inteligente para Tres Reyes</title>
+  <meta name="description" content="TruckRoute transforma boletas en PDF en viajes organizados, rutas navegables y seguimiento operativo para Tres Reyes.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config={theme:{extend:{fontFamily:{sans:['Plus Jakarta Sans','sans-serif']},colors:{gold:{300:'#F3E5AB',400:'#E5C158',500:'#C59B27',600:'#A37E1C'},dark:{950:'#070B0A',900:'#0D1411',800:'#111A15',700:'#1A261F'}}}}}
+  </script>
+  <style>
+    :root{--bg:#070b0a;--panel:#0d1411;--panel2:#111a15;--line:rgba(255,255,255,.08);--gold:#c59b27;--gold2:#e5c158;--green:#24a866;--muted:#91a198}
+    *{box-sizing:border-box} html{scroll-padding-top:92px} body{margin:0;background:#070b0a;color:#f8fafc;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(circle at 20% 0%,rgba(197,155,39,.12),transparent 28%),radial-gradient(circle at 85% 22%,rgba(36,168,102,.10),transparent 24%),linear-gradient(#070b0a,#070b0a)}
+    .landing-header{position:sticky;top:0;z-index:100;background:rgba(7,11,10,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(197,155,39,.18);box-shadow:0 10px 35px rgba(0,0,0,.22)}
+    .landing-nav-shell{width:min(1380px,calc(100% - 32px));min-height:78px;margin:auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px}
+    .landing-brand{display:flex;align-items:center;gap:13px;min-width:0;text-decoration:none}.landing-truck-logo{width:auto;height:49px;max-width:210px;object-fit:contain;display:block}.landing-brand-divider{width:1px;height:36px;background:rgba(197,155,39,.32);flex:none}.landing-client-wrap{display:flex;flex-direction:column;gap:3px;min-width:100px}.landing-client-label{font:700 9px/1 Inter,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7f9187}.landing-client-logo{height:31px;width:auto;max-width:145px;object-fit:contain;object-position:left center;display:block}.landing-nav-links{display:flex;align-items:center;justify-content:center;gap:2px;min-width:0}.landing-nav-links a{font:700 11px/1 Inter,Arial,sans-serif;letter-spacing:.03em;color:#aebbb4;text-decoration:none;padding:10px 9px;border-radius:9px;white-space:nowrap;transition:.2s ease}.landing-nav-links a:hover{color:#fff;background:rgba(197,155,39,.09)}.landing-nav-actions{display:flex;align-items:center;gap:8px;justify-content:flex-end}.landing-live-link,.landing-demo-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-radius:10px;padding:10px 12px;font:800 10px/1 Inter,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:.2s ease}.landing-live-link{color:#e5c158;border:1px solid rgba(197,155,39,.35);background:rgba(197,155,39,.06)}.landing-live-link:hover{border-color:#c59b27;background:rgba(197,155,39,.12)}.landing-live-link svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2}.landing-demo-link{color:#fff;background:#1d6a45;box-shadow:0 8px 22px rgba(29,106,69,.22)}.landing-demo-link:hover{background:#248052;transform:translateY(-1px)}.landing-menu-btn{display:none;width:42px;height:42px;border:1px solid rgba(255,255,255,.12);background:#0d1411;border-radius:10px;align-items:center;justify-content:center;flex-direction:column;gap:4px;cursor:pointer}.landing-menu-btn span{display:block;width:17px;height:2px;border-radius:2px;background:#d8e0dc;transition:.2s ease}.landing-mobile-menu{display:none}
+    .wrap{width:min(1240px,calc(100% - 40px));margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold2);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.eyebrow:before{content:"";width:24px;height:1px;background:var(--gold)}
+    .hero{position:relative;min-height:calc(100vh - 78px);display:flex;align-items:center;padding:78px 0 58px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:72px;align-items:center}.hero h1{font-size:clamp(46px,6.2vw,86px);line-height:.96;letter-spacing:-.055em;margin:18px 0 22px;max-width:830px}.hero h1 span{background:linear-gradient(135deg,#fff 0%,#f3e5ab 38%,#c59b27 82%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy{font-size:17px;line-height:1.75;color:#a9b5af;max-width:690px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:14px 19px;border-radius:12px;text-decoration:none;font-weight:800;font-size:12px;letter-spacing:.04em;transition:.25s ease}.btn-primary{background:#1d6a45;color:#fff;box-shadow:0 14px 38px rgba(29,106,69,.28)}.btn-primary:hover{transform:translateY(-2px);background:#258453}.btn-secondary{color:#e9efec;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.035)}.btn-secondary:hover{border-color:rgba(197,155,39,.45);background:rgba(197,155,39,.07)}
+    .hero-metrics{display:flex;gap:28px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}.metric strong{display:block;font-size:23px}.metric span{color:#7f9188;font-size:11px}.metric.gold strong{color:var(--gold2)}.metric.green strong{color:#55d392}
+    .route-stage{position:relative;min-height:600px}.route-orbit{position:absolute;inset:5% -5%;border:1px solid rgba(197,155,39,.13);border-radius:50%;animation:spin 34s linear infinite}.route-orbit.two{inset:14% 5%;border-color:rgba(36,168,102,.14);animation-direction:reverse;animation-duration:26s}.route-dot{position:absolute;width:9px;height:9px;border-radius:50%;background:#e5c158;box-shadow:0 0 0 7px rgba(197,155,39,.1),0 0 24px rgba(229,193,88,.5);top:12%;left:50%}.route-card{position:absolute;background:linear-gradient(145deg,rgba(17,26,21,.96),rgba(10,16,13,.95));border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 80px rgba(0,0,0,.35);border-radius:20px;overflow:hidden}.main-preview{inset:9% 0 13% 7%;transform:rotate(-1.3deg)}.main-preview img{width:100%;height:100%;object-fit:contain;display:block;background:#070b0a;padding:12px;box-sizing:border-box}.main-preview:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);pointer-events:none}.float-card{padding:13px 15px;display:flex;gap:11px;align-items:center;min-width:184px;animation:float 5s ease-in-out infinite}.float-card .ico{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(197,155,39,.09);border:1px solid rgba(197,155,39,.19)}.float-card b{font-size:11px;display:block}.float-card small{display:block;color:#84958c;font-size:9px;margin-top:3px}.fc1{top:0;right:0}.fc2{left:0;bottom:2%;animation-delay:-1.5s}.fc3{right:-2%;bottom:10%;animation-delay:-2.6s}.hero-blur{position:absolute;border-radius:50%;filter:blur(95px);pointer-events:none}.hb1{width:380px;height:380px;background:rgba(197,155,39,.11);right:3%;top:14%}.hb2{width:300px;height:300px;background:rgba(36,168,102,.10);right:18%;bottom:4%}
+    @keyframes spin{to{transform:rotate(360deg)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+    .trust-strip{border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.018)}.trust-inner{display:grid;grid-template-columns:repeat(4,1fr);min-height:108px}.trust-item{display:flex;align-items:center;gap:13px;padding:22px;border-right:1px solid rgba(255,255,255,.06)}.trust-item:last-child{border-right:0}.trust-icon{font-size:20px}.trust-item b{font-size:12px}.trust-item span{display:block;color:#7e8d85;font-size:10px;margin-top:4px;line-height:1.5}
+    .section{padding:110px 0}.section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:end;margin-bottom:54px}.section-head h2{font-size:clamp(34px,4vw,56px);line-height:1.02;letter-spacing:-.04em;margin:12px 0 0}.section-head p{color:#91a198;line-height:1.8;font-size:14px;max-width:610px;justify-self:end}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative}.flow:before{content:"";position:absolute;left:7%;right:7%;top:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(197,155,39,.45),rgba(36,168,102,.45),transparent)}.flow-step{position:relative;padding-top:0}.flow-num{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;margin-bottom:20px;background:#0c1410;border:1px solid rgba(197,155,39,.25);box-shadow:0 0 0 8px #070b0a;font-weight:800;color:var(--gold2);position:relative;z-index:2}.flow-step:nth-child(even) .flow-num{border-color:rgba(36,168,102,.32);color:#55d392}.flow-step h3{font-size:15px;margin:0 0 8px}.flow-step p{color:#7f8f86;font-size:11px;line-height:1.65;margin:0}
+    .showcase{background:linear-gradient(180deg,rgba(17,26,21,.48),rgba(7,11,10,0));border-top:1px solid rgba(255,255,255,.055)}.showcase-grid{display:grid;grid-template-columns:360px 1fr;gap:34px;align-items:stretch}.module-tabs{display:grid;gap:8px}.module-tab{width:100%;text-align:left;padding:16px 17px;border-radius:14px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.018);color:#8ea097;cursor:pointer;transition:.25s}.module-tab b{display:block;color:#d7e0db;font-size:12px;margin-bottom:4px}.module-tab span{font-size:10px;line-height:1.5}.module-tab.active{background:linear-gradient(135deg,rgba(197,155,39,.11),rgba(36,168,102,.07));border-color:rgba(197,155,39,.34);transform:translateX(6px)}.module-tab.active b{color:#fff}.screen-shell{background:#0b110e;border:1px solid rgba(197,155,39,.22);border-radius:22px;padding:10px;box-shadow:0 28px 90px rgba(0,0,0,.38);min-height:550px}.screen-bar{height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;border-bottom:1px solid rgba(255,255,255,.06)}.dots{display:flex;gap:5px}.dots i{width:7px;height:7px;border-radius:50%;background:#263229}.dots i:nth-child(2){background:#8b742f}.dots i:nth-child(3){background:#1d6a45}.screen-title{font-size:9px;color:#85958d;font-family:monospace}.screen-view{position:relative;height:490px;border-radius:12px;overflow:hidden;background:#080b0a}.screen-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;opacity:0;transform:scale(1.01);transition:opacity .42s ease,transform .55s ease;padding:12px;box-sizing:border-box;background:#080b0a}.screen-view img.active{opacity:1;transform:scale(1)}
+    .benefit-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.benefit-main,.benefit-card{border:1px solid rgba(255,255,255,.075);background:linear-gradient(145deg,rgba(17,26,21,.9),rgba(10,15,13,.9));border-radius:24px;position:relative;overflow:hidden}.benefit-main{padding:38px;min-height:420px}.benefit-main h3{font-size:34px;line-height:1.1;max-width:540px;margin:12px 0 16px}.benefit-main p,.benefit-card p{color:#8fa097;line-height:1.75;font-size:12px}.route-map{position:absolute;right:-50px;bottom:-90px;width:440px;height:300px;opacity:.72}.route-map svg{width:100%;height:100%}.benefit-side{display:grid;grid-template-columns:1fr 1fr;gap:18px}.benefit-card{padding:26px;min-height:201px}.benefit-card strong{font-size:29px;display:block;margin-bottom:8px;color:#fff}.benefit-card span{font-size:10px;color:var(--gold2);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .case{display:grid;grid-template-columns:.95fr 1.05fr;gap:62px;align-items:center}.case-visual{position:relative;min-height:530px}.case-visual .pic{position:absolute;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 25px 80px rgba(0,0,0,.3)}.case-visual .pic img{width:100%;height:100%;object-fit:contain;background:#070b0a;padding:10px;box-sizing:border-box}.case-visual .p1{inset:0 12% 18% 0}.case-visual .p2{width:52%;height:44%;right:0;bottom:0}.case-copy h2{font-size:clamp(36px,4.3vw,58px);line-height:1.03;letter-spacing:-.04em;margin:15px 0 20px}.case-copy>p{color:#95a59d;line-height:1.8;font-size:14px}.case-list{display:grid;gap:11px;margin-top:26px}.case-item{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06)}.case-item i{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-style:normal;color:#55d392;background:rgba(36,168,102,.1);flex:0 0 auto}.case-item b{font-size:12px}.case-item p{font-size:10px;color:#7e8f86;margin:4px 0 0;line-height:1.55}
+    .team-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}.person{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:#0d1411;transition:.28s ease}.person:hover{transform:translateY(-7px);border-color:rgba(197,155,39,.34)}.person-img{aspect-ratio:1/1.18;overflow:hidden;position:relative}.person-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);transition:.35s}.person:hover img{transform:scale(1.04);filter:saturate(1)}.person-info{padding:13px}.person-info b{display:block;font-size:10px}.person-info span{display:block;color:#89998f;font-size:8px;line-height:1.45;margin-top:4px}
+    .cta{padding:40px 0 110px}.cta-box{position:relative;overflow:hidden;border-radius:30px;border:1px solid rgba(197,155,39,.26);background:linear-gradient(120deg,rgba(197,155,39,.12),rgba(29,106,69,.16) 62%,rgba(13,20,17,.96));padding:52px;display:flex;justify-content:space-between;align-items:center;gap:35px}.cta-box:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-110px;top:-170px;border:1px solid rgba(229,193,88,.17);box-shadow:0 0 0 55px rgba(229,193,88,.025),0 0 0 110px rgba(229,193,88,.018)}.cta-box h2{font-size:clamp(31px,4vw,48px);letter-spacing:-.04em;line-height:1.05;margin:0 0 12px;max-width:680px}.cta-box p{color:#95a59d;font-size:12px;line-height:1.7;max-width:620px}.cta-actions{display:flex;gap:9px;position:relative;z-index:2;flex-wrap:wrap;justify-content:flex-end}
+    .contact-band{padding:0 0 44px}.contact-panel{position:relative;overflow:hidden;border-radius:28px;padding:34px;display:grid;grid-template-columns:1.15fr .85fr;gap:22px;border:1px solid rgba(197,155,39,.26);background:linear-gradient(135deg,rgba(197,155,39,.08),rgba(36,168,102,.06) 52%,rgba(9,14,12,.96));box-shadow:0 24px 90px rgba(0,0,0,.3)}.contact-panel:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-110px;top:-110px;background:radial-gradient(circle,rgba(229,193,88,.18),transparent 65%);pointer-events:none}.contact-copy{position:relative;z-index:1}.contact-copy h2{font-size:clamp(28px,3.4vw,46px);line-height:1.04;letter-spacing:-.04em;margin:12px 0 12px}.contact-copy p{color:#97a79f;line-height:1.8;font-size:13px;max-width:620px}.contact-grid{position:relative;z-index:1;display:grid;gap:14px;align-content:center}.contact-card{text-decoration:none;color:#fff;padding:18px 20px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(7,11,10,.72);transition:.25s}.contact-card:hover{transform:translateY(-3px);border-color:rgba(197,155,39,.35);background:rgba(10,16,13,.9)}.contact-label{display:block;color:#8fa297;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:9px}.contact-value{display:block;font-size:18px;font-weight:800;letter-spacing:-.02em}.contact-card small{display:block;margin-top:8px;color:#788981;font-size:10px;line-height:1.55}footer{border-top:1px solid rgba(255,255,255,.07);padding:34px 0;background:#060908}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{display:flex;align-items:center;gap:13px}.footer-brand img{height:34px}.footer-brand small{display:block;color:#6f8077;font-size:9px;margin-top:3px}.footer-links{display:flex;gap:18px}.footer-links a{color:#7f9086;text-decoration:none;font-size:9px}.footer-links a:hover{color:var(--gold2)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.on{opacity:1;transform:none}
+    @media(max-width:1220px){.landing-nav-shell{grid-template-columns:auto 1fr auto;gap:12px}.landing-nav-links a{padding:9px 6px;font-size:10px}.landing-live-link span{display:none}.landing-live-link{width:38px;padding:10px}.team-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:1040px){.landing-nav-links{display:none}.landing-nav-shell{grid-template-columns:1fr auto}.landing-menu-btn{display:flex}.landing-demo-link{display:none}.landing-mobile-menu{display:none;border-top:1px solid rgba(255,255,255,.06);background:rgba(7,11,10,.98);padding:10px 16px 16px}.landing-mobile-menu.open{display:grid;grid-template-columns:1fr 1fr;gap:6px}.landing-mobile-menu a{color:#b5c1ba;text-decoration:none;font:700 11px/1.2 Inter,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:13px 12px;border:1px solid rgba(255,255,255,.06);border-radius:10px;background:#0d1411}.hero-grid,.case{grid-template-columns:1fr;gap:46px}.route-stage{min-height:520px}.section-head{grid-template-columns:1fr;gap:18px}.section-head p{justify-self:start}.flow{grid-template-columns:repeat(3,1fr)}.flow:before{display:none}.showcase-grid{grid-template-columns:1fr}.module-tabs{grid-template-columns:repeat(3,1fr)}.module-tab.active{transform:none}.benefit-grid{grid-template-columns:1fr}.trust-inner{grid-template-columns:repeat(2,1fr)}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.06)}.contact-panel{grid-template-columns:1fr}}
+    @media(max-width:700px){.wrap{width:min(100% - 28px,1240px)}.landing-nav-shell{width:min(100% - 20px,1380px);min-height:66px}.landing-truck-logo{height:40px;max-width:155px}.landing-brand-divider{height:28px}.landing-client-label{display:none}.landing-client-logo{height:28px;max-width:110px}.landing-mobile-menu.open{grid-template-columns:1fr}.hero{padding-top:54px}.hero h1{font-size:47px}.hero-copy{font-size:14px}.hero-metrics{gap:16px;justify-content:space-between}.metric strong{font-size:19px}.route-stage{min-height:390px}.main-preview{inset:10% 0 12% 0}.fc1{right:0}.fc2{left:0}.fc3{display:none}.trust-inner{grid-template-columns:1fr}.trust-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.06)}.section{padding:82px 0}.flow{grid-template-columns:1fr 1fr}.showcase-grid{gap:20px}.module-tabs{grid-template-columns:1fr 1fr}.screen-shell{min-height:380px}.screen-view{height:330px}.benefit-side{grid-template-columns:1fr}.benefit-main{min-height:440px;padding:28px}.case-visual{min-height:390px}.team-grid{grid-template-columns:repeat(2,1fr)}.cta-box{padding:32px 24px;display:block}.cta-actions{justify-content:flex-start;margin-top:24px}.contact-panel{padding:26px 22px}.contact-value{font-size:16px}.footer-inner{flex-direction:column;align-items:flex-start}.footer-links{flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+<!-- ==================== NAVBAR ==================== -->
+  <header class="landing-header">
+    <div class="landing-nav-shell">
+      <a href="#solucion" class="landing-brand" aria-label="TruckRoute — inicio">
+        <img src="assets/truckroute-logo.png" alt="TruckRoute — Intelligent Fleet Solutions" class="landing-truck-logo">
+        <span class="landing-brand-divider" aria-hidden="true"></span>
+        <span class="landing-client-wrap">
+          <span class="landing-client-label">Desarrollado para</span>
+          <img src="assets/tres-reyes-logo.webp" alt="Tres Reyes — Aceitunas y Encurtidos" class="landing-client-logo">
+        </span>
+      </a>
+
+      <nav class="landing-nav-links" aria-label="Navegación principal">
+        <a href="#solucion">Inicio</a>
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#caso-exito">Caso de Éxito</a>
+        <a href="#equipo">Equipo</a>
+        <a href="index_doc.html">Documentación</a>
+        <a href="index_QSG.html">QSG</a>
+        <a href="index_faqs.html">FAQs</a>
+      </nav>
+
+      <div class="landing-nav-actions">
+        <a href="https://tres-reyes-logistica.page.gd" target="_blank" rel="noopener" class="landing-live-link">
+          <span>Ir al sistema</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></svg>
+        </a>
+        <a href="#contacto" class="landing-demo-link">Solicitar demo</a>
+        <button type="button" class="landing-menu-btn" id="landing-menu-btn" aria-expanded="false" aria-controls="landing-mobile-menu" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="landing-mobile-menu" id="landing-mobile-menu">
+      <a href="#solucion">Inicio</a>
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#caso-exito">Caso de Éxito</a>
+      <a href="#equipo">Equipo de Trabajo</a>
+      <a href="index_doc.html">Documentación</a>
+      <a href="index_QSG.html">QSG</a>
+      <a href="index_faqs.html">FAQs</a>
+      <a href="https://tres-reyes-logistica.page.gd" target="_blank" rel="noopener">Ingresar al sistema ↗</a>
+      <a href="#contacto">Solicitar demo</a>
+    </div>
+  </header>
+
+<main>
+  <section id="solucion" class="hero">
+    <div class="hero-blur hb1"></div><div class="hero-blur hb2"></div>
+    <div class="wrap hero-grid">
+      <div class="reveal on">
+        <div class="eyebrow">Logística que conecta datos con ruta</div>
+        <h1>Menos armado manual.<br><span>Más control en cada reparto.</span></h1>
+        <p class="hero-copy">TruckRoute centraliza la operación logística de <strong style="color:#fff">Tres Reyes</strong>: toma las boletas en PDF, organiza los pedidos por zona, controla la carga del vehículo y convierte el viaje en una ruta lista para navegar.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://tres-reyes-logistica.page.gd" target="_blank" rel="noopener">Abrir TruckRoute <span>↗</span></a>
+          <a class="btn-secondary" href="#como-funciona">Ver cómo funciona <span>↓</span></a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric gold"><strong>7</strong><span>vistas principales</span></div>
+          <div class="metric green"><strong>5 zonas</strong><span>de distribución</span></div>
+          <div class="metric"><strong>PDF → Maps</strong><span>flujo conectado</span></div>
+        </div>
+      </div>
+      <div class="route-stage reveal">
+        <div class="route-orbit"><span class="route-dot"></span></div><div class="route-orbit two"></div>
+        <div class="route-card main-preview"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/viajeshoy.png" alt="Panel TruckRoute - viajes del día"></div>
+        <div class="route-card float-card fc1"><div class="ico">📄</div><div><b>Boleta procesada</b><small>Datos listos para planificar</small></div></div>
+        <div class="route-card float-card fc2"><div class="ico">📍</div><div><b>Zona asignada</b><small>Pedidos agrupados geográficamente</small></div></div>
+        <div class="route-card float-card fc3"><div class="ico">🚚</div><div><b>Viaje en marcha</b><small>Ruta disponible para el chofer</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="wrap trust-inner">
+      <div class="trust-item"><div class="trust-icon">📄</div><div><b>Lectura desde PDF</b><span>La operación comienza con las boletas reales del día.</span></div></div>
+      <div class="trust-item"><div class="trust-icon">⚖️</div><div><b>Control de carga</b><span>Los kilos se contemplan al momento de armar el viaje.</span></div></div>
+      <div class="trust-item"><div class="trust-icon">🗺️</div><div><b>Organización por zonas</b><span>Los destinos se ordenan para simplificar el despacho.</span></div></div>
+      <div class="trust-item"><div class="trust-icon">📡</div><div><b>Seguimiento operativo</b><span>Estado, ubicación y alertas reunidos en una sola plataforma.</span></div></div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="section">
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="eyebrow">Del documento al reparto</div><h2>Un flujo simple para una operación que antes era dispersa.</h2></div><p>TruckRoute ordena cada etapa del despacho dentro del mismo circuito. El objetivo no es sumar pantallas: es reducir pasos manuales y darle a cada rol la información que necesita en el momento correcto.</p></div>
+      <div class="flow reveal">
+        <div class="flow-step"><div class="flow-num">01</div><h3>Cargar boletas</h3><p>Se incorporan los PDFs con la información necesaria para preparar los pedidos.</p></div>
+        <div class="flow-step"><div class="flow-num">02</div><h3>Clasificar pedidos</h3><p>Direcciones y datos de entrega se organizan dentro de las zonas operativas.</p></div>
+        <div class="flow-step"><div class="flow-num">03</div><h3>Armar el viaje</h3><p>Se seleccionan entregas, vehículo, capacidad y repartidor para el despacho.</p></div>
+        <div class="flow-step"><div class="flow-num">04</div><h3>Navegar la ruta</h3><p>El chofer accede al itinerario y puede abrirlo directamente en Google Maps.</p></div>
+        <div class="flow-step"><div class="flow-num">05</div><h3>Seguir la operación</h3><p>El equipo visualiza el viaje y cuenta con alertas ante desvíos del recorrido.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="funcionalidades" class="section showcase">
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="eyebrow">Dentro de TruckRoute</div><h2>La operación, vista módulo por módulo.</h2></div><p>Explorá las principales pantallas del sistema. Las capturas pertenecen al flujo actual de TruckRoute y permiten entender cómo se conecta cada parte del proceso.</p></div>
+      <div class="showcase-grid reveal">
+        <div class="module-tabs" id="module-tabs">
+          <button class="module-tab active" data-i="0"><b>01 · Acceso al sistema</b><span>Ingreso seguro al entorno operativo.</span></button>
+          <button class="module-tab" data-i="1"><b>02 · Carga de boletas</b><span>Inicio del circuito desde documentos PDF.</span></button>
+          <button class="module-tab" data-i="2"><b>03 · Viajes pendientes</b><span>Pedidos agrupados y listos para planificar.</span></button>
+          <button class="module-tab" data-i="3"><b>04 · Viajes del día</b><span>Control de la operación ya despachada.</span></button>
+          <button class="module-tab" data-i="4"><b>05 · Tracking GPS</b><span>Ubicación de la flota durante el recorrido.</span></button>
+          <button class="module-tab" data-i="5"><b>06 · Alertas</b><span>Detección de desvíos respecto de la ruta.</span></button>
+          <button class="module-tab" data-i="6"><b>07 · Configuración</b><span>Administración de flota y repartidores.</span></button>
+        </div>
+        <div class="screen-shell">
+          <div class="screen-bar"><div class="dots"><i></i><i></i><i></i></div><div class="screen-title" id="screen-title">truckroute.app / acceso</div></div>
+          <div class="screen-view" id="screen-view">
+            <img class="active" src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/login.png" alt="Acceso al Sistema">
+            <img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/cargaboletas.png" alt="Carga de Boletas PDF">
+            <img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/viajespend.png" alt="Viajes Pendientes por Zona">
+            <img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/viajeshoy.png" alt="Control de Viajes del Día">
+            <img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/track.jpg" alt="Tracking GPS en Tiempo Real">
+            <img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/alerta.png" alt="Alertas de Desvío de Ruta">
+            <img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/config.png" alt="Configuración de Flota y Repartidores">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="eyebrow">Información que sirve</div><h2>Diseñado alrededor de decisiones operativas reales.</h2></div><p>La plataforma reúne los datos que condicionan un reparto —dirección, zona, carga, vehículo, chofer y ruta— para que la planificación se pueda hacer con contexto y no con información repartida entre herramientas.</p></div>
+      <div class="benefit-grid reveal">
+        <article class="benefit-main"><div class="eyebrow">Visión logística</div><h3>De una lista de pedidos a un viaje que el chofer puede ejecutar.</h3><p>La información cambia de forma a medida que avanza el proceso: primero se captura, después se agrupa, luego se asigna y finalmente se convierte en navegación y seguimiento.</p><div class="route-map"><svg viewBox="0 0 500 300" fill="none"><path d="M10 250 C90 165 120 240 190 160 S310 45 360 110 S430 195 490 35" stroke="rgba(229,193,88,.35)" stroke-width="2" stroke-dasharray="7 10"/><circle cx="10" cy="250" r="7" fill="#24a866"/><circle cx="190" cy="160" r="6" fill="#c59b27"/><circle cx="360" cy="110" r="6" fill="#c59b27"/><circle cx="490" cy="35" r="8" fill="#24a866"/></svg></div></article>
+        <div class="benefit-side">
+          <article class="benefit-card"><span>Clasificación</span><strong>5 zonas</strong><p>Un criterio geográfico común para ordenar entregas y facilitar combinaciones de viaje.</p></article>
+          <article class="benefit-card"><span>Integración</span><strong>Google Maps</strong><p>El itinerario puede abrirse desde el perfil del chofer para continuar la navegación.</p></article>
+          <article class="benefit-card"><span>Control</span><strong>Carga en kg</strong><p>La capacidad del vehículo forma parte del armado del viaje, no queda como dato aislado.</p></article>
+          <article class="benefit-card"><span>Seguimiento</span><strong>GPS + alertas</strong><p>La operación no termina al despachar: también contempla recorrido y desvíos.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="caso-exito" class="section">
+    <div class="wrap case">
+      <div class="case-visual reveal"><div class="pic p1"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/cargaboletas.png" alt="Carga de boletas en TruckRoute"></div><div class="pic p2"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/track.jpg" alt="Seguimiento de rutas en TruckRoute"></div></div>
+      <div class="case-copy reveal"><div class="eyebrow">Caso Tres Reyes</div><h2>Una solución construida alrededor de su forma de repartir.</h2><p>TruckRoute fue desarrollado para acompañar la operación de Tres Reyes —Aceitunas y Encurtidos— desde la preparación de las entregas hasta el seguimiento del vehículo en ruta.</p><div class="case-list"><div class="case-item"><i>✓</i><div><b>Menos tareas repetitivas</b><p>La información de las boletas alimenta el circuito de planificación.</p></div></div><div class="case-item"><i>✓</i><div><b>Una lógica común de despacho</b><p>Zonas, kilos, camión y repartidor se contemplan en el mismo flujo.</p></div></div><div class="case-item"><i>✓</i><div><b>Continuidad hasta la calle</b><p>La ruta preparada en el sistema llega al chofer mediante Google Maps.</p></div></div></div><div class="hero-actions"><a class="btn-primary" href="https://tres-reyes-logistica.page.gd" target="_blank" rel="noopener">Ver sistema operativo ↗</a></div></div>
+    </div>
+  </section>
+
+  <section id="equipo" class="section">
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="eyebrow">Equipo de desarrollo</div><h2>Producto, datos, desarrollo y documentación.</h2></div><p>El proyecto se organizó con responsabilidades diferenciadas para cubrir dirección, experiencia de usuario, base de datos, desarrollo y soporte documental.</p></div>
+      <div class="team-grid reveal">
+        <article class="person"><div class="person-img"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/varela.jfif" alt="Joaquín Varela"></div><div class="person-info"><b>Joaquín Varela</b><span>Project Manager · UX/UI</span></div></article>
+        <article class="person"><div class="person-img"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/mateo.jfif" alt="Silva"></div><div class="person-info"><b>Silva</b><span>Base de Datos</span></div></article>
+        <article class="person"><div class="person-img"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/traverso.jfif" alt="Traverso"></div><div class="person-info"><b>Traverso</b><span>Desarrollador 01 · Front / Back</span></div></article>
+        <article class="person"><div class="person-img"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/crupi.jfif" alt="Crupi"></div><div class="person-info"><b>Crupi</b><span>Desarrollador 02 · Front / Back</span></div></article>
+        <article class="person"><div class="person-img"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/garcia.jfif" alt="García"></div><div class="person-info"><b>García</b><span>Desarrollador 03 · Front End</span></div></article>
+        <article class="person"><div class="person-img"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/gurschpon.jfif" alt="Gurschpon"></div><div class="person-info"><b>Gurschpon</b><span>Administración 01</span></div></article>
+        <article class="person"><div class="person-img"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/rodriguez.jfif" alt="Rodríguez"></div><div class="person-info"><b>Rodríguez</b><span>Administración 02</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="cta"><div class="wrap"><div class="cta-box reveal"><div><h2>TruckRoute ya está listo para mostrar el flujo completo.</h2><p>Podés entrar al entorno operativo o recorrer la documentación técnica del proyecto desde la misma experiencia.</p></div><div class="cta-actions"><a class="btn-primary" href="https://tres-reyes-logistica.page.gd" target="_blank" rel="noopener">Ingresar al sistema ↗</a><a class="btn-secondary" href="index_doc.html">Ver documentación</a></div></div></div></section>
+
+  <section class="contact-band">
+    <div class="wrap">
+      <div class="contact-panel reveal">
+        <div class="contact-copy">
+          <div class="eyebrow">Contacto directo</div>
+          <h2>¿Querés implementar TruckRoute o conocer más sobre la solución?</h2>
+          <p>Podemos coordinar una demo, conversar sobre la operación logística de tu empresa y mostrar cómo adaptar el flujo de TruckRoute a distintas necesidades de reparto y seguimiento.</p>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:proyectointermiami@gmail.com">
+            <span class="contact-label">Mail de contacto</span>
+            <span class="contact-value">proyectointermiami@gmail.com</span>
+            <small>Escribinos para coordinar una demo o realizar una consulta.</small>
+          </a>
+          <a class="contact-card" href="tel:+5491164966925">
+            <span class="contact-label">Número telefónico</span>
+            <span class="contact-value">+54 9 11 6496-6925</span>
+            <small>Contacto directo para consultas comerciales y demostraciones.</small>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap footer-inner"><div class="footer-brand"><img src="assets/truckroute-logo.png" alt="TruckRoute — Intelligent Fleet Solutions"><div><b style="font-size:10px">TruckRoute · Sistema Logístico</b><small>© 2026 · Desarrollo realizado para Tres Reyes</small></div></div><div class="footer-links"><a href="#solucion">Inicio</a><a href="#funcionalidades">Funcionalidades</a><a href="index_doc.html">Documentación</a><a href="index_QSG.html">QSG</a><a href="index_faqs.html">FAQs</a></div></div></footer>
+
+<script>
+const landingMenuBtn=document.getElementById('landing-menu-btn'),landingMobileMenu=document.getElementById('landing-mobile-menu');
+if(landingMenuBtn&&landingMobileMenu){landingMenuBtn.addEventListener('click',()=>{const open=landingMobileMenu.classList.toggle('open');landingMenuBtn.setAttribute('aria-expanded',String(open));landingMenuBtn.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});landingMobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{landingMobileMenu.classList.remove('open');landingMenuBtn.setAttribute('aria-expanded','false')}))}
+const tabs=[...document.querySelectorAll('.module-tab')],shots=[...document.querySelectorAll('#screen-view img')],screenTitle=document.getElementById('screen-title');
+const screenTitles=['truckroute.app / acceso','truckroute.app / carga-boletas','truckroute.app / viajes-pendientes','truckroute.app / viajes-hoy','truckroute.app / tracking','truckroute.app / alertas','truckroute.app / configuracion'];
+function showModule(i){tabs.forEach((t,n)=>t.classList.toggle('active',n===i));shots.forEach((s,n)=>s.classList.toggle('active',n===i));screenTitle.textContent=screenTitles[i]}
+tabs.forEach((t,i)=>t.addEventListener('click',()=>showModule(i)));
+let autoIndex=0,autoTimer=setInterval(()=>{autoIndex=(autoIndex+1)%tabs.length;showModule(autoIndex)},5000);document.getElementById('module-tabs')?.addEventListener('pointerenter',()=>clearInterval(autoTimer));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});document.querySelectorAll('.reveal:not(.on)').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
