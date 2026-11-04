@@ -70,7 +70,20 @@ html{scroll-padding-top:110px}
 @media(max-width:1200px){.sales-header .project-nav,.sales-header .sales-actions{display:none}.sales-header .project-mobile{display:block}.sales-header .project-shell{min-height:80px;padding:10px 20px}.sales-header .project-product{height:54px;max-width:210px}.sales-header .project-client{height:35px;max-width:140px}}
 @media(max-width:520px){.sales-header .project-shell{gap:10px;padding:10px 14px;min-height:74px}.sales-header .project-product{height:46px;max-width:145px}.sales-header .project-client{height:30px;max-width:95px}.sales-header .project-for span{font-size:9px}}
 </style>
-</head>
+<style>
+.impact{background:linear-gradient(180deg,rgba(255,255,255,.018),transparent)}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.impact-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.impact-card .tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#7f9188}
+.impact-card .before{color:#7f9188;font-size:13px;text-decoration:line-through;text-decoration-color:rgba(255,255,255,.25)}
+.impact-card .num{font-size:clamp(34px,3.4vw,46px);font-weight:800;letter-spacing:-.04em;color:var(--gold2);line-height:1}
+.impact-card .num small{display:block;font-size:12px;font-weight:700;color:#55d392;letter-spacing:.02em;margin:10px 0 0}
+.impact-card h3{margin:4px 0 0;font-size:16px}.impact-card p{flex:1}
+.impact-card p{margin:0;color:#91a198;font-size:13px;line-height:1.65}
+.impact-note{margin-top:22px;font-size:12px;color:#6f8178;text-align:center}
+@media(max-width:1040px){.impact-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.impact-grid{grid-template-columns:1fr}}
+</style></head>
 <body>
 <!-- ==================== NAVBAR ==================== -->
   <div class="project-header sales-header" role="banner"><div class="project-shell"><div class="project-identity"><a href="https://varelajoaquin2007-rgb.github.io/Landing-Page-Tres-Reyes/" aria-label="Turbologistica — inicio"><img class="project-product" src="assets/turbologistica-logo-dark.png" alt="Turbologistica — Intelligent Fleet Solutions"></a><div class="project-for"><span>Desarrollado para</span><img class="project-client" src="assets/tres-reyes-logo.webp" alt="Tres Reyes — Aceitunas y Encurtidos"></div></div><nav class="project-nav" aria-label="Navegación principal"><a href="#solucion">Solución</a><a href="#funcionalidades">Funcionalidades</a><a href="#caso-exito">Caso de éxito</a><a href="#equipo">Equipo</a></nav><div class="sales-actions"><a class="project-system" href="https://tresreyes.turbologistica.com" target="_blank" rel="noopener">Ir al sistema ↗</a><a class="sales-demo" href="#contacto">Solicitar demo</a></div><details class="project-mobile"><summary>Menú</summary><nav aria-label="Navegación móvil"><a href="#solucion">Solución</a><a href="#funcionalidades">Funcionalidades</a><a href="#caso-exito">Caso de éxito</a><a href="#equipo">Equipo</a><a class="project-system" href="https://tresreyes.turbologistica.com" target="_blank" rel="noopener">Ir al sistema ↗</a><a class="sales-demo" href="#contacto">Solicitar demo</a></nav></details></div></div>
@@ -162,7 +175,7 @@ html{scroll-padding-top:110px}
       <div class="benefit-grid reveal">
         <article class="benefit-main"><div class="eyebrow">Visión logística</div><h3>De una lista de pedidos a un viaje que el chofer puede ejecutar.</h3><p>La información cambia de forma a medida que avanza el proceso: primero se interpreta desde la boleta, después se valida y combina para el viaje, luego se asigna y finalmente se convierte en navegación y seguimiento.</p><div class="route-map"><svg viewBox="0 0 500 300" fill="none"><path d="M10 250 C90 165 120 240 190 160 S310 45 360 110 S430 195 490 35" stroke="rgba(229,193,88,.35)" stroke-width="2" stroke-dasharray="7 10"/><circle cx="10" cy="250" r="7" fill="#24a866"/><circle cx="190" cy="160" r="6" fill="#c59b27"/><circle cx="360" cy="110" r="6" fill="#c59b27"/><circle cx="490" cy="35" r="8" fill="#24a866"/></svg></div></article>
         <div class="benefit-side">
-          <article class="benefit-card"><span>Planificación</span><strong>6 zonas</strong><p>La zona se toma de cada boleta y el administrador puede combinar una o más zonas dentro del mismo viaje.</p></article>
+          <article class="benefit-card"><span>Planificación</span><strong>Multi-zona</strong><p>La zona se toma de cada boleta y el administrador puede combinar una o más zonas dentro del mismo viaje.</p></article>
           <article class="benefit-card"><span>Integración</span><strong>Google Maps</strong><p>El itinerario se abre desde el perfil del chofer y contempla un final personalizado o el depósito.</p></article>
           <article class="benefit-card"><span>Control</span><strong>Carga en kg</strong><p>La capacidad del vehículo forma parte del armado del viaje, no queda como dato aislado.</p></article>
           <article class="benefit-card"><span>Seguimiento</span><strong>GPS + alertas</strong><p>La operación no termina al despachar: también contempla recorrido y desvíos.</p></article>
@@ -171,6 +184,17 @@ html{scroll-padding-top:110px}
     </div>
   </section>
 
+  <section id="impacto" class="section impact">
+<div class="wrap">
+<div class="section-head reveal"><div><div class="eyebrow">Problemas resueltos</div><h2>Cuatro problemas reales, resueltos de punta a punta.</h2></div><p>Surgieron de la entrevista de relevamiento con Tres Reyes, antes de escribir una línea de código. Cada uno tiene hoy una respuesta concreta dentro de Turbologistica.</p></div>
+<div class="impact-grid reveal">
+<article class="impact-card"><span class="tag">Armado de rutas</span><span class="before">Horas armando rutas a mano</span><div class="num">&lt; 2 min<small>objetivo</small></div><h3>Rutas en minutos</h3><p>Del armado manual con papeles y mensajes de WhatsApp a una hoja de ruta lista, generada por el sistema.</p></article>
+<article class="impact-card"><span class="tag">Recorrido</span><span class="before">Pasar dos veces por el mismo lugar</span><div class="num">0<small>objetivo: dobles pasadas</small></div><h3>Rutas sin repeticiones</h3><p>El recorrido se planifica con todos los destinos del día a la vista, no entrega por entrega.</p></article>
+<article class="impact-card"><span class="tag">Combustible</span><span class="before">Kilómetros de más sin medir</span><div class="num">≥ 15%<small>objetivo: menos distancia</small></div><h3>Ahorro de combustible</h3><p>Menos kilómetros recorridos por salida, con el itinerario optimizado y listo para navegar.</p></article>
+<article class="impact-card"><span class="tag">Carga</span><span class="before">Sin saber cuántos kg lleva cada camión</span><div class="num">100%<small>objetivo: salidas con kg asignados</small></div><h3>Control de carga por salida</h3><p>Cada camión sale con su carga registrada, y el sistema avisa ante sobrecarga o subutilización.</p></article>
+</div>
+<p class="impact-note">Objetivos de proyecto definidos junto a Tres Reyes. Se actualizarán con las mediciones de la operación real.</p>
+</div></section>
   <section id="caso-exito" class="section">
     <div class="wrap case">
       <div class="case-visual reveal"><div class="pic p1"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/cargaboletas.png" alt="Carga de boletas en Turbologistica"></div><div class="pic p2"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/track.png" alt="Seguimiento de rutas en Turbologistica"></div></div>
