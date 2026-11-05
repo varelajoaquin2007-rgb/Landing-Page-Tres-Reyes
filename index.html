@@ -72,7 +72,7 @@ html{scroll-padding-top:110px}
 </style>
 <style>
 .impact{background:linear-gradient(180deg,rgba(255,255,255,.018),transparent)}
-.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.impact-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}.impact-grid .impact-card{grid-column:span 2}.impact-grid .impact-card:nth-child(n+4){grid-column:span 3}
 .impact-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:10px}
 .impact-card .tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#7f9188}
 .impact-card .before{color:#7f9188;font-size:13px;text-decoration:line-through;text-decoration-color:rgba(255,255,255,.25)}
@@ -81,8 +81,8 @@ html{scroll-padding-top:110px}
 .impact-card h3{margin:4px 0 0;font-size:16px}.impact-card p{flex:1}
 .impact-card p{margin:0;color:#91a198;font-size:13px;line-height:1.65}
 .impact-note{margin-top:22px;font-size:12px;color:#6f8178;text-align:center}
-@media(max-width:1040px){.impact-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.impact-grid{grid-template-columns:1fr}}
+@media(max-width:1040px){.impact-grid{grid-template-columns:repeat(2,1fr)}.impact-grid .impact-card,.impact-grid .impact-card:nth-child(n+4){grid-column:auto}.impact-grid .impact-card:last-child{grid-column:span 2}}
+@media(max-width:600px){.impact-grid{grid-template-columns:1fr}.impact-grid .impact-card:last-child{grid-column:auto}}
 </style></head>
 <body>
 <!-- ==================== NAVBAR ==================== -->
@@ -186,19 +186,20 @@ html{scroll-padding-top:110px}
 
   <section id="impacto" class="section impact">
 <div class="wrap">
-<div class="section-head reveal"><div><div class="eyebrow">Problemas resueltos</div><h2>Cuatro problemas reales, resueltos de punta a punta.</h2></div><p>Surgieron de la entrevista de relevamiento con Tres Reyes, antes de escribir una línea de código. Cada uno tiene hoy una respuesta concreta dentro de Turbologistica.</p></div>
+<div class="section-head reveal"><div><div class="eyebrow">Problemas resueltos</div><h2>Cinco problemas reales, resueltos de punta a punta.</h2></div><p>Surgieron de la entrevista de relevamiento con Tres Reyes, antes de escribir una línea de código. Cada uno tiene hoy una respuesta concreta dentro de Turbologistica.</p></div>
 <div class="impact-grid reveal">
 <article class="impact-card"><span class="tag">Armado de rutas</span><span class="before">Horas armando rutas a mano</span><div class="num">&lt; 2 min<small>objetivo</small></div><h3>Rutas en minutos</h3><p>Del armado manual con papeles y mensajes de WhatsApp a una hoja de ruta lista, generada por el sistema.</p></article>
 <article class="impact-card"><span class="tag">Recorrido</span><span class="before">Pasar dos veces por el mismo lugar</span><div class="num">0<small>objetivo: dobles pasadas</small></div><h3>Rutas sin repeticiones</h3><p>El recorrido se planifica con todos los destinos del día a la vista, no entrega por entrega.</p></article>
 <article class="impact-card"><span class="tag">Combustible</span><span class="before">Kilómetros de más sin medir</span><div class="num">≥ 15%<small>objetivo: menos distancia</small></div><h3>Ahorro de combustible</h3><p>Menos kilómetros recorridos por salida, con el itinerario optimizado y listo para navegar.</p></article>
 <article class="impact-card"><span class="tag">Carga</span><span class="before">Sin saber cuántos kg lleva cada camión</span><div class="num">100%<small>objetivo: salidas con kg asignados</small></div><h3>Control de carga por salida</h3><p>Cada camión sale con su carga registrada, y el sistema avisa ante sobrecarga o subutilización.</p></article>
+<article class="impact-card"><span class="tag">Seguimiento</span><span class="before">Sin saber dónde está cada camión</span><div class="num">&lt; 3 min<small>objetivo: en avisar un desvío</small></div><h3>Flota a la vista en tiempo real</h3><p>La ubicación de cada camión se ve en el mapa durante toda la jornada, con alertas automáticas si se aleja de la ruta prevista.</p></article>
 </div>
 <p class="impact-note">Objetivos de proyecto definidos junto a Tres Reyes. Se actualizarán con las mediciones de la operación real.</p>
 </div></section>
   <section id="caso-exito" class="section">
     <div class="wrap case">
       <div class="case-visual reveal"><div class="pic p1"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/cargaboletas.png" alt="Carga de boletas en Turbologistica"></div><div class="pic p2"><img src="https://raw.githubusercontent.com/varelajoaquin2007-rgb/Landing-Page-Tres-Reyes/main/track.png" alt="Seguimiento de rutas en Turbologistica"></div></div>
-      <div class="case-copy reveal"><div class="eyebrow">Caso Tres Reyes</div><h2>Una solución construida alrededor de su forma de repartir.</h2><p>Turbologistica fue desarrollado para acompañar la operación de Tres Reyes —Aceitunas y Encurtidos— desde la preparación de las entregas hasta el seguimiento del vehículo en ruta.</p><div class="case-list"><div class="case-item"><i>✓</i><div><b>Menos tareas repetitivas</b><p>La información de las boletas alimenta el circuito de planificación.</p></div></div><div class="case-item"><i>✓</i><div><b>Una lógica común de despacho</b><p>Zona informada, kilos, retiros, camión, repartidor y punto de finalización se contemplan en el mismo flujo.</p></div></div><div class="case-item"><i>✓</i><div><b>Continuidad hasta la calle</b><p>La ruta preparada en el sistema llega al chofer mediante Google Maps.</p></div></div></div><div class="hero-actions"><a class="btn-primary" href="https://tresreyes.turbologistica.com" target="_blank" rel="noopener">Ver sistema operativo ↗</a></div></div>
+      <div class="case-copy reveal"><div class="eyebrow">Caso Tres Reyes</div><h2>Una solución construida alrededor de su forma de repartir.</h2><p>Turbologistica fue desarrollado para acompañar la operación de Tres Reyes —Aceitunas y Encurtidos— desde la preparación de las entregas hasta el seguimiento del vehículo en ruta.</p><div class="case-list"><div class="case-item"><i>✓</i><div><b>Menos tareas repetitivas</b><p>La información de las boletas alimenta el circuito de planificación.</p></div></div><div class="case-item"><i>✓</i><div><b>Una lógica común de despacho</b><p>Zona informada, kilos, retiros, camión, repartidor y punto de finalización se contemplan en el mismo flujo.</p></div></div><div class="case-item"><i>✓</i><div><b>Visibilidad durante el reparto</b><p>Ubicación del camión en vivo y alertas ante desvíos, sin llamar al chofer.</p></div></div><div class="case-item"><i>✓</i><div><b>Continuidad hasta la calle</b><p>La ruta preparada en el sistema llega al chofer mediante Google Maps.</p></div></div></div><div class="hero-actions"><a class="btn-primary" href="https://tresreyes.turbologistica.com" target="_blank" rel="noopener">Ver sistema operativo ↗</a></div></div>
     </div>
   </section>
 
